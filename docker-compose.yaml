@@ -1,0 +1,10 @@
+version: "2.4"
+services:
+  k3dcontainer:
+    privileged: true
+    network_mode: host
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    build: .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
